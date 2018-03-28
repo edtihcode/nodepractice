@@ -32,25 +32,24 @@ function findMean(array){
 
 function findMedian(array){
     var array2 = (sortArray(array));
-    var index = (array2.length/2);
-    var index2 = Math.floor(index);
+    var index = Math.floor(array2.length/2);
     var results = 0;
         if (array.length % 2 == 0){
-            console.log(array2);
-            console.log(index2);
-             results = (array2[index2]+ array2[index2-1])/2;
-             console.log('even');
+            //console.log(array2);
+            //console.log(index);
+             results = (array2[index]+ array2[index-1])/2;
+             //console.log('even');
         }else {
-             results = array2[index2];
-             console.log("odd");
+             results = array2[index];
+             //console.log("odd");
         }
         
    return results;
-    return array2[index2];
 }
 
-function findMode(){
-    
+function findMode(array){
+    var array2 = array.unique;
+    console.log(array);
 }
 
 module.exports = { // to name the functions and give it a tag to be called as a library from another script
@@ -59,7 +58,8 @@ module.exports = { // to name the functions and give it a tag to be called as a 
     getDate: getDate,
     sortArray,
     findMean,
-    findMedian
+    findMedian,
+    findMode
     
     
 }
